@@ -1,6 +1,6 @@
 .\" Manpage for eniac.
 .\" Contact emmamurairi@gmail.com for any problem
-.TH man 8 "10 September 2020" "2.0" "eniac man page"
+.TH man 2 "10 September 2020" "2.0" "eniac man page"
 .SH NAME
 eniac \- does not do much
 .SH SYNOPSIS
