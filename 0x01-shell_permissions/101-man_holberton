@@ -2,7 +2,7 @@
 .\" Contact emmamurairi@gmail.com for any problem
 .TH man 8 "10 September 2020" "2.0" "eniac man page"
 .SH NAME
-eniac
+eniac \- does not do much
 .SH SYNOPSIS
 eniac
 .SH DESCRIPTION
@@ -15,4 +15,3 @@ eniac could be programmed to perform complex sequences of operations
 No known bugs
 .SH AUTHOR
 African Leadership College
-0.32	10 December 1945
