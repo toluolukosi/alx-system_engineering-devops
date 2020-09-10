@@ -2,13 +2,15 @@
 .\" Contact emmamurairi@gmail.com for any problem
 .TH man 2 "10 September 2020" "2.0" "eniac man page"
 .SH NAME
-eniac \- does not do much
+.B eniac
+- does not do much
 .SH SYNOPSIS
 eniac
 .SH DESCRIPTION
 eniac was turning complete, and able to solve a large class of numerical problems
 .SH OPTIONS
-eniac does not take any options.
+.B eniac 
+does not take any options.
 .SH SEE ALSO
 eniac could be programmed to perform complex sequences of operations
 .SH BUGS
