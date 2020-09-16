@@ -1,2 +1,2 @@
 #!/bin/bash
-grep '[^az-AZ]' /etc/shh/sshd_config
+grep '[^a-zA-Z]' /etc/shh/sshd_config
