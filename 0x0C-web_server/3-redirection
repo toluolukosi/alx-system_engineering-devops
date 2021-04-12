@@ -8,6 +8,10 @@ ufw allow 'Nginx HTTP'
 # Override the default index file served as home page
 echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
 
+#Give the user  ownership to website files
+sudo chown -R $USER:$USER /var/www/html
+sudo chmod -R 755 /var/www
+
 # Redirect to /redirect_me to a youtube video
 sudo sed -i '37i\rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
 
