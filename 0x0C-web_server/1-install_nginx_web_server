@@ -2,4 +2,9 @@
 # Install nginx and start it
 sudo apt-get -y install nginx
 sudo service nginx start
-echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
+
+# File exist but not being served
+#echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
+
+# Change the index file that's being served
+echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
