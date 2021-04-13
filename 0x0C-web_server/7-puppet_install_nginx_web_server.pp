@@ -1,8 +1,11 @@
 # Setup nginx server
+include nginx
 
-package { 'nginx':
-  ensure     => 'installed',
+nginx::resource::server { 'web1.emmastro.tech':
+  listen_port => 80,
+  proxy       => 'http://localhost:80',
 }
+
 
 file { '/var/www/html/index.html':
   content => 'Holberton School',

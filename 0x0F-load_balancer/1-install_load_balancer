@@ -1,1 +1,16 @@
 #!/usr/bin/env bash
+apt -y update
+apt -y install haproxy
+
+sudo nano /etc/haproxy/haproxy.cfg
+
+# Listen to web1 and web2 servers
+echo "frontend http_front
+   bind *:80
+   stats uri /haproxy?stats
+   default_backend http_back
+
+backend http_back
+   balance roundrobin
+   server 35-web-01 35.231.86.187:80 check
+   server 35-web-01 35.196.73.7:80 check"
