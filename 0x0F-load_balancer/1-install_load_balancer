@@ -2,8 +2,6 @@
 apt -y update
 apt -y install haproxy
 
-sudo nano /etc/haproxy/haproxy.cfg
-
 # Listen to web1 and web2 servers
 echo "frontend http_front
    bind *:80
