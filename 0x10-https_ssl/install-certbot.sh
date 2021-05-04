@@ -25,4 +25,8 @@ cat cert.pem privkey.pem > all.pem
 
 # Use this all.pem file in your haproxy configuration. Refer to 1-haproxy_ssl_termination file.
 
+# Add the following line on frontend to redirect http to https if needed
+http-request redirect scheme https unless { ssl_fc }
+
+# Restart haproxy, and you're good to go!
 sudo service haproxy start # or restart
