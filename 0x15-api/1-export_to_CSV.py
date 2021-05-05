@@ -1,25 +1,22 @@
 #!/usr/bin/python3
-"""gathers data from an API"""
+"""
+extend your Python script to export data in the CSV format
+"""
 
-import requests
 import csv
-import sys
-
-
-def getInformation(employeeid):
-    """Returns information based on ID"""
-    url = "https://jsonplaceholder.typicode.com/"
-    endpoint = url + 'users/{}'.format(employeeid)
-    employee = requests.get(endpoint).json()
-    taskendpoint = url + 'TODOs?userId={}'.format(employee.get('id'))
-    tasks = requests.get(taskendpoint).json()
-    with open('{}.csv' .format(sys.argv[1]), 'w') as f:
-        w = csv.writer(f, quoting=csv.QUOTE_ALL)
-        _username = employee['username']
-        _id = employee['id']
-        for task in tasks:
-            w.writerow([_id, _username, task['completed'], task['title']])
-
+import requests
+from sys import argv
 
 if __name__ == '__main__':
-    getInformation(sys.argv[1])
+    endpoint = "https://jsonplaceholder.typicode.com/"
+    userId = argv[1]
+    user = requests.get(endpoint + "users/{}".
+                        format(userId), verify=False).json()
+    todo = requests.get(endpoint + "todos?userId={}".
+                        format(userId), verify=False).json()
+    with open("{}.csv".format(userId), 'w', newline='') as csvfile:
+        my_writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
+        for task in todo:
+            my_writer.writerow([int(userId), user.get('username'),
+                                task.get('completed'),
+                                task.get('title')])

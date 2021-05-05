@@ -1,30 +1,21 @@
 #!/usr/bin/python3
-"""obtains info from json placeholder api and returns it in json format"""
+"""
+export to json
+"""
 
 import json
 import requests
-import sys
-
-
-def getInformation(employeeid):
-    """Returns information based on ID"""
-    url = "https://jsonplaceholder.typicode.com/"
-    endpoint = url + 'users/{}'.format(employeeid)
-    employee = requests.get(endpoint).json()
-    taskendpoint = url + 'TODOs?userId={}'.format(employee.get('id'))
-    tasks = requests.get(taskendpoint).json()
-    _id = employee['id']
-    _allData = []
-    for task in tasks:
-        data = {}
-        data['task'] = task['title']
-        data['completed'] = task['completed']
-        data['username'] = employee['username']
-        _allData.append(data)
-    _final = {_id: _allData}
-    with open('{}.json'.format(_id), 'w') as f:
-        json.dump(_final, f)
-
+from sys import argv
 
 if __name__ == '__main__':
-    getInformation(sys.argv[1])
+    endpoint = "https://jsonplaceholder.typicode.com/"
+    userId = argv[1]
+    user = requests.get(endpoint + "users/{}".
+                        format(userId), verify=False).json()
+    todo = requests.get(endpoint + "todos?userId={}".
+                        format(userId), verify=False).json()
+    with open("{}.json".format(userId), "w") as json_file:
+        json.dump({userId: [{
+            "task": task.get("title"),
+            "completed": task.get("completed"),
+            "username": user.get("username")} for task in todo]}, json_file)
