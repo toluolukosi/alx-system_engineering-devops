@@ -1,3 +1,2 @@
-cutable File  2 lines (2 sloc)  28 Bytes
 #!/bin/bash
 printenv | sort
