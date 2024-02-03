@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+<<<<<<< HEAD
 # Displays numbers from 1 to 20 in addition to:
 #   "bad luck from China" for the 4th iteration
 #   "bad luck from Japan" for the 9th iteration
@@ -15,4 +16,18 @@ do
     "17") echo "bad luck from Italy";;
   esac
   (( count++ ))
+=======
+#print numbers from 1-20.
+
+x=1
+while [ $x -le 20 ]
+do
+echo "$x";
+case $x in
+    4) echo "bad luck from China";;
+    9) echo "bad luck from Japan";;
+    17) echo "bad luck from Italy";;
+esac
+    x=$(( x + 1 ))
+>>>>>>> db338aa4536f07f89cfd1657eb5a4ce25b1f8cd2
 done
