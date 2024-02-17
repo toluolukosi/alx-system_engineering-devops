@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+<<<<<<< HEAD
 # Loops from 1 to 10 and displays:
 # "bad luck" for the 4th iteration
 # "good luck" for the 8th iteration
@@ -18,4 +19,20 @@ do
 		echo "Best School"
 	fi
 	(( count++ ))
+=======
+#prints a string 10 times
+x=0
+while [ $x != 10 ]
+do
+  if [ $x = 3 ]
+  then
+    echo "bad luck"
+  elif [ $x = 7 ]
+  then
+    echo "good luck"
+  else
+    echo "Holberton School"
+  fi
+  x=$(( x + 1 ))
+>>>>>>> db338aa4536f07f89cfd1657eb5a4ce25b1f8cd2
 done

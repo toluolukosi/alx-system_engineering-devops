@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+<<<<<<< HEAD
 # Displays numbers from 1 to 100 in list format.
 #   Displays "FizzBuzz" when the number is a multiple of 3 and 5.
 #   Displays "Fizz" when the number is a multiple of 3.
@@ -19,4 +20,23 @@ do
   else
     echo "$num"
   fi
+=======
+#fizbuzz
+
+number=1
+while [ $number -le 100 ]; do
+if [ $((number%15)) = 0 ];
+then
+    echo "FizzBuzz";
+elif [ $((number%5)) = 0 ];
+then
+    echo "Buzz";
+elif [ $((number%3)) = 0 ];
+then
+    echo "Fizz";
+else
+    echo "$number";
+fi;
+    number=$(( number + 1));
+>>>>>>> db338aa4536f07f89cfd1657eb5a4ce25b1f8cd2
 done
